@@ -18,6 +18,7 @@ public:
 // => Iterate the nums and store the cnt of every element in cnt array.
 // => Now traverse the cnt(count) vector if any value in cnt vector is greater than 1 , return i.
 
+// Time- O(n) space-O(n)
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
