@@ -1,4 +1,19 @@
-// using another vector
+// 1) Using Sort 
+// Time- O(n log n) space-O(n)
+
+class Solution1 {
+public:
+    int findDuplicate(vector<int>& nums) {
+       sort(nums.begin(), nums.end());
+    for (int i = 1; i < nums.size(); i++) {
+            if (nums[i] == nums[i - 1])
+                return nums[i];
+        }
+        return -1;  
+    }
+};
+
+// 2) using another vector
 // => take a cnt vector of size num.size() & initilise all it value to 0.
 // => Iterate the nums and store the cnt of every element in cnt array.
 // => Now traverse the cnt(count) vector if any value in cnt vector is greater than 1 , return i.
