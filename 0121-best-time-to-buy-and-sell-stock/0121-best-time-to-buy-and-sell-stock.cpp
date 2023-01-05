@@ -10,9 +10,12 @@ public:
             maxProfit= max(maxProfit,profit);
         }
         return maxProfit;
+        
+        // Time O(n)
+        // space O(1)
     }
     
-    
+    // another way to write above code
 //       int j = INT_MAX;; // least price found in array
 //         int k= 0; //profit if sold today 
 //         int mp= 0; //max profit that can be acheived
@@ -33,7 +36,7 @@ public:
 //         // space O(1)
 //     }
         
-        // another way to write above code
+        
         
        
 };
