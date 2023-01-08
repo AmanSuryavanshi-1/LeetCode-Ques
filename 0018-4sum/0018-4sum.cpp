@@ -6,11 +6,10 @@ public:
  set<vector<int>>ans;
         sort(nums.begin(), nums.end());
         int n = nums.size();
-        int i=0, j=0, l, r;
         for (int i=0; i<n; i++){
             for(int j=i+1; j<n; j++){
                long int sum= (long int)target-nums[i]-nums[j];
-                l=j+1; r=n-1;
+                int l=j+1; int r=n-1;
                 while(l<r){
                     int x = nums[l]+nums[r];
                     int y = nums[l], z= nums[r] ;
