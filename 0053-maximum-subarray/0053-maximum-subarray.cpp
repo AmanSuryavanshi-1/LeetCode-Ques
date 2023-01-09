@@ -1,22 +1,28 @@
 class Solution {
 public:
+    
+//     Time complexity = O(n)
+//     Space = O(1)
+    // KADEN's Algo
+        
     int maxSubArray(vector<int>& nums) {
-        int max = INT_MIN; // for maximum value
-        int sum = 0; // for larger sum
+        
+         int maxSum = INT_MIN; // for maximum value
+        int curSum = 0; // for larger sum
         
         // Iterate through the loop
         for(int i = 0; i< nums.size();i++){
             
-            sum += nums[i]; // calculating the sum
-            if (sum > max){
+            curSum += nums[i]; // calculating the sum
+            if (curSum > maxSum){
                 // if sum is max than prev max ==> set max = sum
-                max = sum;
+                maxSum = curSum;
             }
-            if (sum < 0){
+            if (curSum < 0){
                 // if sum become -ve then we should discard till that point and fresh start to find max value
-                sum = 0;
+                curSum = 0;
             }
         }
-        return max;
+        return maxSum;
     }
 };
