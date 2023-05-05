@@ -35,14 +35,14 @@ public:
             if(sum == k) count++;
             
             if(m.find(sum - k) != m.end()){
-                count += m[sum - k];
+                count += m[sum - k]; // sum-k value has been seen before in the map, and we need to add the VALUE of the key
             }
             
             if(m.find(sum)!=m.end()){
-                m[sum]++;
+                m[sum]++; // put sum into our map if found in map
             }
             else{
-            m[sum]++; // put sum into our map
+            m[sum]++; // put sum into our map if NOT found in map
             }
             }
         return count;
