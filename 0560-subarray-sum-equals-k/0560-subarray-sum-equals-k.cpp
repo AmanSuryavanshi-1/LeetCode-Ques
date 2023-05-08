@@ -1,51 +1,42 @@
+// Time Complexity --> O(n) // where n is the size of the array
+// Space Complexity --> O(n) // we are using unordered map from our side
+
+
 class Solution {
 public:
-    int subarraySum(vector<int>& nums, int k) {
-       
+    int subarraySum(vector<int>& arr, int k) {
+        int n = arr.size(); // take the size of the array
         
-// Time Complexity --> O(n ^ 2)
-// Space Complexity --> O(1) 
+        int prefix[n]; // make a prefix array to store prefix sum
         
-//         int count = 0;
-//         for (int i=0; i<nums.size();i++){
-//             int sum = nums[i];
-//             if(sum == k) // if element itself equal to k, then also increment count
-//                 count++;
+        prefix[0] = arr[0]; // for element at index at zero, it is same
+        
+        // making our prefix array
+        for(int i = 1; i < n; i++)
+        {
+            prefix[i] = arr[i] + prefix[i - 1];
+        }
+        
+        
+        unordered_map<int,int> mp; // declare an unordered map
+        
+        int ans = 0; // to store the number of our subarrays having sum as 'k'
+        
+        for(int i = 0; i < n; i++) // traverse from the prefix array
+        {
+            if(prefix[i] == k) // if it already becomes equal to k, then increment ans
+                ans++;
             
-//             for (int j= i+1; j<nums.size();j++){
-//             sum+=nums[j];
-//             if(sum==k )
-//             {
-//                 count++;
-//             }
-//  }
-//             }
-// return count;
-//     }
-// };
-        
-              
-// Time Complexity --> O(n)
-// Space Complexity --> O(n)   //hashmap is used
-        
-         unordered_map<int,int> m;
-        int sum=0,count=0;
-        
-        for(int i = 0; i < nums.size(); i++){
-            sum += nums[i];
-            if(sum == k) count++;
-            
-            if(m.find(sum - k) != m.end()){
-                count += m[sum - k]; // sum-k value has been seen before in the map, and we need to add the VALUE of the key
+            // now, as we discussed find whether (prefix[i] - k) present in map or not
+            if(mp.find(prefix[i] - k) != mp.end())
+            {
+                ans += mp[prefix[i] - k]; // if yes, then add it our answer
             }
             
-            if(m.find(sum)!=m.end()){
-                m[sum]++; // put sum into our map if found in map
-            }
-            else{
-            m[sum]++; // put sum into our map if NOT found in map
-            }
-            }
-        return count;
+            mp[prefix[i]]++; // put prefix sum into our map
+        }
+        
+        
+        return ans; // and at last, return our answer
     }
 };
