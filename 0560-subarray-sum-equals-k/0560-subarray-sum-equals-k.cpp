@@ -28,6 +28,7 @@ public:
                 ans++;
             
             // now, as we discussed find whether (prefix[i] - k) present in map or not
+            
             if(mp.find(prefix[i] - k) != mp.end())
             {
                 ans += mp[prefix[i] - k]; // if yes, then add it our answer
