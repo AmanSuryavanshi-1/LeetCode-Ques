@@ -1,41 +1,36 @@
-// Time Complexity --> O(n) // where n is the size of the array
-// Space Complexity --> O(n) // we are using unordered map from our side
-
+// // Time Complexity --> O(n) // where n is the size of the array
+// // Space Complexity --> O(n) // we are using unordered map from our side
 
 class Solution {
 public:
     int subarraySum(vector<int>& arr, int k) {
         int n = arr.size(); // take the size of the array
         
-        int prefix[n]; // make a prefix array to store prefix sum
+        int sum[n]; // make an array to store the prefix sum
         
-        prefix[0] = arr[0]; // for element at index at zero, it is same
+        sum[0] = arr[0]; // for the element at index zero, it is the same
         
-        // making our prefix array
-        for(int i = 1; i < n; i++)
-        {
-            prefix[i] = arr[i] + prefix[i - 1];
+        // computing the prefix sum
+        for(int i = 1; i < n; i++) {
+            sum[i] = arr[i] + sum[i - 1];
         }
         
+        unordered_map<int, int> mp; // declare an unordered map
         
-        unordered_map<int,int> mp; // declare an unordered map
-        
-        int ans = 0; // to store the number of our subarrays having sum as 'k'
-        for(int i = 0; i < n; i++) // traverse from the prefix array
-        {
-            if(prefix[i] == k) // if it already becomes equal to k, then increment ans
+        int ans = 0; // to store the number of subarrays having sum as 'k'
+        for(int i = 0; i < n; i++) { // traverse the array
+            if(sum[i] == k) { // if it already becomes equal to k, then increment ans
                 ans++;
-            
-            // now, as we discussed find whether (prefix[i] - k) present in map or not
-            if(mp.find(prefix[i] - k) != mp.end())
-            {
-                ans += mp[prefix[i] - k]; // if yes, then add it our answer
             }
             
-            mp[prefix[i]]++; // put prefix sum into our map
+            // find whether (sum[i] - k) is present in the map or not
+            if(mp.find(sum[i] - k) != mp.end()) {
+                ans += mp[sum[i] - k]; //if yes, then add it to our answer 
+            }
+            
+            mp[sum[i]]++; // put prefix sum into our map
         }
         
-        
-        return ans; // and at last, return our answer
+        return ans; // return the answer
     }
 };
