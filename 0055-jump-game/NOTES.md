@@ -1,2 +1,2 @@
-​
-// The loop iterates in reverse order, starting from the second-to-last element (index n - 2).
+-> The loop iterates in reverse order, starting from the second-last element (index n - 2).
+-> The condition i + nums[i] >= goal checks if the current position i plus the value at nums[i] is greater than or equal to the goal. If it is, the goal is updated to the current position i.
