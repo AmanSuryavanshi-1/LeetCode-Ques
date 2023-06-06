@@ -11,4 +11,4 @@ public:
         return (goal == 0);
     }
 };
-
+//notes
