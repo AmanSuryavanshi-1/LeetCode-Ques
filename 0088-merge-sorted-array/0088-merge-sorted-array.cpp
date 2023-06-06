@@ -25,5 +25,14 @@ public:
         k--;
     }
     }
-};
+
        
+ // Time Complexity : O(MlogM),  Sorting the array(nums1) costs O(MlogM)
+ // Space Complexity : O(1), Constant Space. 
+
+    //       for(int i=0; i<n; i++){
+    //         nums1[m+i] = nums2[i];
+    //     }
+    //     sort(nums1.begin(), nums1.end());
+    // }
+};
