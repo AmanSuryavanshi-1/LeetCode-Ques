@@ -1,9 +1,9 @@
 class Solution {
 public:
     int strStr(string haystack, string needle) {
-        int index = haystack.find(needle);
-        return index;
-         
-        return -1;   
+    int index = haystack.find(needle);
+        if(index >=0 ) return index;
+        else return -1;
     }
 };
+   
