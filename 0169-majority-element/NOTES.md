@@ -4,7 +4,7 @@ Map approach 1
 ->If no majority element is found during the loop, the code returns -1 at the end.
 ​
 Approach 2
--> count += (ele == nums[i]) ? 1 : -1;
+-> **count += (ele == nums[i]) ? 1 : -1; **
 if ele is equal to num[i] then add 1 to count else subtract 1
 ​
 ​
