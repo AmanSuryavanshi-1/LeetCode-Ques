@@ -18,14 +18,14 @@ public:
         
         
       int n = nums.size();
-int ele = nums[0];
+int ele = nums[0]; // creating a array intially of size 0
 int count = 0;
 
 for(int i = 0; i < n; i++){
     if(count == 0){
         ele = nums[i];
     }
-    count += (ele == nums[i]) ? 1 : -1;
+    count += (ele == nums[i]) ? 1 : -1; 
 }
 
 return ele;
