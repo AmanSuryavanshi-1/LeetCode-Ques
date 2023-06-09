@@ -1,3 +1,1 @@
-->  **input vector nums1 is modified in-place to hold the merged result.**
--> The larger element is placed at the end of nums1, and the corresponding pointer (i or j) is decremented accordingly. The k pointer is also decremented to move to the next position.
-->If there are any remaining elements in nums2 after merging, they are copied to the remaining positions in nums1
+​
