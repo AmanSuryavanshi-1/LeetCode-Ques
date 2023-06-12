@@ -8,6 +8,7 @@ public:
         
         vector<pair<int,int>> v;
              
+        
         for(int i=0; i<nums.size();i++){
             v.push_back({nums[i],i});
         }
