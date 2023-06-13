@@ -12,6 +12,7 @@ public:
             // and add the non-visited element from the last
             sum+=cardPoints[cardPoints.size()-k+i]; // including
             maxsum= max(sum,maxsum);
+            
         }
         
         return maxsum;
