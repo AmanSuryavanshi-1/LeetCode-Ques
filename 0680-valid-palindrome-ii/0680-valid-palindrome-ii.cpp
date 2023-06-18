@@ -15,8 +15,11 @@ public:
         }
         
         return true;
+        
     }
+    
 public:
+
     bool validPalindrome(string s) {
         int st = 0, en = s.length()-1;
         // st= start, en=end
