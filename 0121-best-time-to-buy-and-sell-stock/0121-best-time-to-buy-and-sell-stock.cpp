@@ -2,41 +2,39 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
     
-        int maxProfit = 0;
-        int minSoFar = prices[0];
-        for(int i=0; i<prices.size(); i++){
-            minSoFar=min(minSoFar,prices[i]);
-            int profit = prices[i]-minSoFar;  
-            maxProfit= max(maxProfit,profit);
-        }
-        return maxProfit;
+        // int maxProfit = 0;
+        // int minSoFar = prices[0];
+        // for(int i=0; i<prices.size(); i++){
+        //     minSoFar=min(minSoFar,prices[i]);
+        //     int profit = prices[i]-minSoFar;  
+        //     maxProfit= max(maxProfit,profit);
+        // }
+        // return maxProfit;
         
         // Time O(n)
         // space O(1)
-    }
+    // }
     
     // another way to write above code
-//       int j = INT_MAX;; // least price found in array
-//         int k= 0; //profit if sold today 
-//         int mp= 0; //max profit that can be acheived
-        
-//         for(int i=0; i<prices.size(); i++){
-//             if(prices[i]<j){ // if we found new buy value which is more smaller then previous one
-//                 j=prices[i]; // updating least price
-//             }
-//             k= prices[i]-j; // calculating profit if sold today, price at particular day - least price
-            
-//             if(mp<k){  // finding max profit acheived by comparing k of each day
-//                 mp=k; // update maxl profit
-//             }
-//         }
-//          return mp;
-        
-//         // Time O(n)
-//         // space O(1)
-//     }
-        
-        
-        
-       
+// Time: O(n)
+// Space: O(1)
+    
+    // int maxP=0;
+    // int l=0, r=0,profit=0;  // l is for buy and r is for sell
+    
+    int maxP = 0;
+        int l=0;
+
+        for (int r = 1; r < prices.size(); r++) {
+            if (prices[l] < prices[r]) {
+                int profit = prices[r] - prices[l];
+                maxP = max(maxP, profit);
+            } else {
+                l = r;
+            }
+        }
+
+        return maxP;
+    }
+    
 };
