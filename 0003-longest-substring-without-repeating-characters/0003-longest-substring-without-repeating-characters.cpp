@@ -17,6 +17,7 @@ public:
             }
             mySet.insert(s[right]);
             res = max(res, right - left + 1);   // we are storing max number of unique substr in the process
+            // right - left + 1 we are doing +1 cause index start form 0
         }
         return res;
     }
