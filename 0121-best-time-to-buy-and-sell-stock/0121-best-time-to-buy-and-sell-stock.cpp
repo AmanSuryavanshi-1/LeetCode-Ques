@@ -25,12 +25,12 @@ public:
     int maxP = 0;
         int l=0;
 
-        for (int r = 1; r < prices.size(); r++) {
+        for (int r = 0; r < prices.size(); r++) {
             if (prices[l] < prices[r]) {
                 int profit = prices[r] - prices[l];
                 maxP = max(maxP, profit);
             } else {
-                l = r;
+                l=r;
             }
         }
 
