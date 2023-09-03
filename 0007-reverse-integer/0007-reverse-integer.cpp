@@ -1,6 +1,10 @@
 class Solution {
 public:
     int reverse(int x) {
+        
+// Time Complexity: O(log(x))
+// Space Complexity: O(1)
+        
         int r =0,remainder=0 ; //r is reverse
         
         while(x){
