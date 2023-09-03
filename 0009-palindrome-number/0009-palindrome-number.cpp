@@ -6,15 +6,15 @@ public:
             return false;
         }
         
-        long long int r=0,R=0;
+        long long int remainder=0,Reverse=0;
         int newN = n;
        
         while(n!=0){
-            r=n%10;
+            remainder=n%10;
             n=n/10;
-            R=R*10+r;
+            Reverse=Reverse*10+remainder;
         }    
-        return (newN == R);    
-        // if(newN == R) return true;
+        return (newN == Reverse);    
+        // if(newN == Reverse) return true;
     }
 };
