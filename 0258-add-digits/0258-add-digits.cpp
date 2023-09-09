@@ -16,6 +16,7 @@ public:
 //         }  
 //         return num;
 
+        
       int sum=0;
         while(num)
         {
