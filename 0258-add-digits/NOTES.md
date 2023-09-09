@@ -1,1 +1,1 @@
-O(log10(num)) represents a logarithmic time complexity, which is typically more efficient than linear time complexity O(n). Logarithmic time complexity means that the algorithm's time grows slowly with the size of the input, whereas linear time complexity means that the time grows linearly with the size of the input. So, O(log10(num)) is generally better than O(n) in terms of algorithm efficiency.
+​
