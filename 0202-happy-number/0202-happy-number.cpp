@@ -23,3 +23,6 @@ public:
          return false;
     }
 };
+
+// Time complexity: O(log(n)) - In the worst case, the while loop iterates for each digit in 'n', which is log(n).
+// Space complexity: O(log(n)) - The space used by the set 'myset' can grow up to log(n) in the worst case, where 'n' is the input number.
