@@ -10,7 +10,7 @@ public:
         int res = 0;
 
         for (int right = 0; right < s.length(); right++) {
-            while (mySet.find(s[right]) != mySet.end()) { 
+            while (mySet.find(s[right]) != mySet.end()) {  // if found in set
 // a while loop that continues to execute as long as the element s[right] is found in the std::set, i.e., as long as mySet.find(s[right]) doesn't return an iterator pointing to the "end" of the set.
                 mySet.erase(s[left]);
                 left++;
