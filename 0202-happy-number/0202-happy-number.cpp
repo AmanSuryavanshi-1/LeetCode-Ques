@@ -4,7 +4,7 @@ public:
          set<int> myset;
         int sum;
          int r;
-        while(1) //for endless repetion
+        while(n) //for endless repetion
         {
             sum=0;
             while(n>0){
