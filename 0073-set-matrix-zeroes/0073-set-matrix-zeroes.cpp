@@ -12,6 +12,7 @@ public:
         set<int> row;
         set<int> col;
         
+        // This loop identifies rows and columns containing at least one zero and adds their indices to the respective sets.
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
                 if(matrix[i][j]==0){
@@ -23,8 +24,8 @@ public:
         
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
-                if(row.count(i)>0 || col.count(j)>0){
-                    matrix[i][j]=0;
+                if(row.count(i)>0 || col.count(j)>0){   
+                    matrix[i][j]=0;    
                 }
             }
         }
