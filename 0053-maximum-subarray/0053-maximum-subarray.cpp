@@ -10,12 +10,10 @@ public:
          int maxSum = INT_MIN; // for maximum value
         int curSum = 0; // for larger sum
         
-        // Iterate through the loop
         for(int i = 0; i< nums.size();i++){
             
-            curSum += nums[i]; // calculating the sum
+            curSum += nums[i]; 
             if (curSum > maxSum){
-                // if sum is max than prev max ==> set max = sum
                 maxSum = curSum;
             }
             if (curSum < 0){
