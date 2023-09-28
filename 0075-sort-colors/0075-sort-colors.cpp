@@ -1,19 +1,30 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        int i=0, l = 0, r = nums.size()-1;
-        while(l<=r){
-        if (nums[l]==0){
-            swap(nums[i++] , nums[l++]);
-// if 0 is already in starting increament both i and l 
-// swap is used when 1 is at first index
+// Method 1
+// Time complexity: O(nlogn)
+// Space complexity: O(1)
+        // return sort(nums.begin(), nums.end());
+        
+// Method 2
+// Time complexity: O(n)
+// Space complexity: O(1)
+        int low=0, mid= 0, high=nums.size()-1;
+        while(mid <= high){
+        if(nums[mid] == 0){ 
+            swap(nums[low],nums[mid]);
+            low++;
+            mid++;
         }
-        else if(nums[l]==2){
-            swap(nums[l] , nums[r--]);
-            //putting 2 in the last
+
+        else if(nums[mid] == 1) mid++;
+        else{                                   // if(nums[mid] == 2) 
+            swap(nums[mid],nums[high]);
+            high--;
         }
-        else
-        l++;
-            }
+      }
     }
 };
+
+         
+                                
