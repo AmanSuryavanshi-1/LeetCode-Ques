@@ -19,14 +19,13 @@ public:
             negative++;    // number of negative signs at the start in string
             i++;
         }
-       
-        
-
+     
         while(i<n && s[i]>='0' && s[i]<='9') {
             ans = ans*10 + (s[i]-'0'); // (s[i] - '0') is converting character to integer
             i++;
         }
-         if(negative>0) {ans = -ans;}  // if negative sign exist
+        
+        if(negative>0) {ans = -ans;}  // if negative sign exist
         if(positive>0 && negative>0) return 0;  // if both +ve and -ve sign exist, Example: +-12 then ans =0
         
         if(ans>INT_MAX) return INT_MAX; // if ans > 2^31 - 1
