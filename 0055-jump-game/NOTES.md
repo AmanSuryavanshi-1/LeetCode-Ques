@@ -1,8 +1,10 @@
 -> The loop iterates in reverse order, starting from the second-last element (index n - 2).
-->for (int i = n - 2; i >= 0; i--) {
+->```
+for (int i = n - 2; i >= 0; i--) {
 if (i + nums[i] >= goal) {
 goal = i;
 }
+```
 **DRY RUN**
 **EG-1 = {3, 2, 1, 0, 4}**
 1. Iteration 1 (i = 3): 3 <= 4  ❌ (condition no true so goal is not updated)
