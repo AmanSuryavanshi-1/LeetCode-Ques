@@ -16,26 +16,22 @@ public:
         
         unordered_map<int,int> mp;
         int count =0;
-       for (int num : nums) {
-        // For each element 'num' in the 'nums' vector:
-
-        if (mp.find(num) != mp.end()) {
+        for (int i = 0; i < nums.size(); i++) {
+        if (mp.find(nums[i]) != mp.end()) {
             // Check if 'num' is found in the 'mp' (unordered map).
 
-            count += mp[num];
-            // If 'num' is found, increment 'count' by the value associated with 'num' in the map.
-            // This counts the identical pairs that 'num' forms with previous occurrences in 'nums'.
-
-            mp[num]++;
+            count += mp[nums[i]];
+            // If 'nums[i]' is found, increment 'count' by the value associated with 'nums[i]' in the map.
+            mp[nums[i]]++;
             // Increment the count in the map for 'num' to indicate another occurrence.
         } else {
             // If 'num' is not found in the map:
-
-            mp[num] = 1;
+            mp[nums[i]] = 1;
             // Initialize the count for 'num' in the map to 1, indicating that we've seen it once.
         }
     }
-
+    
     return count;
+
     }
 };
