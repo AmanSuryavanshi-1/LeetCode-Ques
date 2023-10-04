@@ -1,13 +1,17 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-  
-        std::string t;
+// Time complexity: O(n)
+// Space complexity: O(n)  string 't' can be up to the same length as the input string 's' 
+        
+        string t;
         for(const auto& a:s)
         {
             if(a>='A' && a<='Z')
             {
-                t.push_back(a-'A' + 'a');
+                char lowercase = tolower(a);
+                t.push_back(lowercase);
+                // t.pk(a-'A' + 'a');
             }
             else if(a>='a' && a<='z')
             {
