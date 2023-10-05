@@ -2,30 +2,30 @@ class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
 // Time complexity: O(n+m) 
-// Space complexity: O(1)
+// Space complexity: O(1) // as map is taking only 26 alphabets
         
-        int letterCount[26] = {0};
+//         for(int i=0;i<s.size();i++){
+//             mp[s[i]]++;
+//         }
 
-        // Count the frequency of characters in the magazine.
-        for (int i = 0; i < magazine.size(); i++) {
-            char c = magazine[i];
-            letterCount[c - 'a']++;
+//         for(int i=0;i<t.size();i++){
+//             if(mp[t[i]]>0) mp[t[i]]--; // if have decrement its count by one from map
+//     // dont have suffucient character return false you can't make it.
+//             else return false;
+//         }
+//    // you can make it
+//         return true;
+//     }
+        unordered_map<char,int> mp(26);
+        
+        for(int i=0; i<magazine.size(); i++){
+            mp[magazine[i]]++;  //update the character counts in the mp
         }
-
-        // Check if it's possible to construct the ransomNote.
-        for (int i = 0; i < ransomNote.size(); i++) {
-            char c = ransomNote[i];
-            int index = c - 'a';
-
-            if (letterCount[index] > 0) {
-                // Decrement the frequency if the character is available in magazine.
-                letterCount[index]--;
-            } else {
-                // If the character is not available, return false.
-                return false;
-            }
+        
+        for(int i=0; i<ransomNote.size(); i++){
+            if(mp[ransomNote[i]]>0) mp[ransomNote[i]]--; //it checks if there are positive occurrences of that character in the mp map
+            else return false;
         }
-        // If all characters in ransomNote are constructible, return true.
         return true;
     }
 };
