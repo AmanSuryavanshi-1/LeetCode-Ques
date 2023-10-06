@@ -1,12 +1,15 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
+// Time Complexity: O(n) 
+// Space Complexity: O(1)
+        
          if (s.length() != t.length()) {
         return false; // If different lengths, they cannot be isomorphic.
     }
         
-        unordered_map <char , char> mapST; // Map from s to t.
-        unordered_map <char , char> mapTS; // Map from t to s.
+        unordered_map <char , char> mapST(26); // Map from s to t.
+        unordered_map <char , char> mapTS(26); // Map from t to s.
         
         for(int i = 0 ; i<s.length() ; i++) {
             char c1= s[i];
