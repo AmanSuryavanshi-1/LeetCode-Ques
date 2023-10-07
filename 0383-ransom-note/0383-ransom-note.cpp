@@ -9,7 +9,6 @@ public:
         for(int i=0; i<magazine.size(); i++){
             mp[magazine[i]]++;  //update the character counts in the mp
         }
-        
         for(int i=0; i<ransomNote.size(); i++){
             if(mp[ransomNote[i]]>0) mp[ransomNote[i]]--; //it checks if there are positive occurrences of that character in the mp map
             else return false;
