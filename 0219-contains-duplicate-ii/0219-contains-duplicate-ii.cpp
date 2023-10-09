@@ -1,23 +1,22 @@
 class Solution {
 public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
-unordered_map<int,int> mp;
-        int n = nums.size();
         
-        for(int i=0; i<n; i++)
-        {
-            // mp.count() will tell whatever ith index that I want, have I seen it before?
-            if(mp.count(nums[i])>0)
-            {
-                // if I have already seen this number, then check for condition abs(i - j) <= k
-                if(abs(i-mp[nums[i]])<=k)
-                    return true;
-            }
-            // if I have not seen this number before, insert the number with its position in the map
-            // and if the number is already present in the map, then update the position of that number
-            mp[nums[i]] = i;
+//         TC = O(N)
+//         SC = O(N)
+        
+         int n=nums.size();
+    unordered_map<int,int> mp;                       //key = element, value = index
+    
+    for(int i=0;i<n;i++){
+        int curr=nums[i];
+		
+        if(mp.find(curr)!=mp.end()){                 //if curr_element is present in map
+            if(abs(i-mp[curr]) <= k) return true;    //then check abs(i-mp[curr]) <= k, return true;
+            // mp[curr]=i;                              //else update the index of curr_element;
         }
-        // after the complete traversal, if we don't find a pair to satisfy the condition, return false
-        return false;
+        mp[curr]=i;                                  //else, push element and it's index into map
     }
+    return false;
+}
     };
