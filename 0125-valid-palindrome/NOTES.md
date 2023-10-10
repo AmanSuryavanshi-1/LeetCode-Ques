@@ -1,5 +1,7 @@
+```
 int start= 0;
 int end = s.length()-1;
+​
 ​
 while(start<=end){
 // Skip non-alphanumeric characters at the beginning of the string. (isalnum)
@@ -14,3 +16,4 @@ start++;
 end--;
 }
 return true;
+```
