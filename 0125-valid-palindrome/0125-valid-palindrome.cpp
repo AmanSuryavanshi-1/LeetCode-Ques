@@ -23,6 +23,7 @@ public:
 //             }
 //         }
         
+        
 //         string temp=t;
         
 //         reverse(t.begin(),t.end());
