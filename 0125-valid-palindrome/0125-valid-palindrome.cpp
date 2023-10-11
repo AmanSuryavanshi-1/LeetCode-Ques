@@ -25,7 +25,6 @@ public:
         
         
 //         string temp=t;
-        
 //         reverse(t.begin(),t.end());
 //         if (t==temp) return true;     
 
