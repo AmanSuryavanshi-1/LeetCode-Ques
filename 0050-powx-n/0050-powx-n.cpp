@@ -11,12 +11,12 @@ public:
         double pow = 1;
         
         while(num){ // equivalent to while(num != 0)
-            if(num & 1) { // equivalent to if((num & 1) != 0)
+            if(num % 2) { // equivalent to if((num & 1) != 0)
                 pow *= x;
             }
             
             x *= x;
-            num >>= 1;
+            num = num/2;
         }
         
         return pow;
