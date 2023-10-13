@@ -12,11 +12,10 @@ public:
         double pow = 1;
         
         while(num){ // equivalent to while(num != 0)
-            if(num % 2) {  //even
+            if(num % 2 != 0) {   // Check if num is odd
                 pow *= x;
             }
-            //odd
-            x *= x;
+            x *= x;  // Regardless of whether num is even or odd, square x
             num = num/2;
         }
         
