@@ -3,6 +3,7 @@ public:
     vector<int> plusOne(vector<int>& digits) {
 // Time complexity: O(n)
 // Space complexity: O(1)
+        
                int n = digits.size()-1;
         for(int i = n; i >= 0; i--){
             if(i == n)
