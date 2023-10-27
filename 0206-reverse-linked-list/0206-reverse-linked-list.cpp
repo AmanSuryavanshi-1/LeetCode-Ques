@@ -3,13 +3,16 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* prev=NULL , *curr= head, *temp;
-        while(curr!=NULL){
+         ListNode* prev = NULL;  
+        ListNode* curr = head;
+        ListNode* temp;        // Temporary pointer to store the next node
+
+        while (curr != NULL) { 
             temp = curr->next;
             curr->next = prev;
-            prev=curr;
+            prev = curr; 
             curr = temp;
         }
-        return prev;
+        return prev; 
     }
 };
