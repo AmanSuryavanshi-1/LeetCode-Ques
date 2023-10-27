@@ -5,7 +5,7 @@ public:
     ListNode* reverseList(ListNode* head) {
          ListNode* prev = NULL;  
         ListNode* curr = head;
-        ListNode* temp;        // Temporary pointer to store the next node
+        ListNode* temp;
 
         while (curr != NULL) { 
             temp = curr->next;
