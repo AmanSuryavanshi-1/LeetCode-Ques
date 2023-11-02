@@ -29,7 +29,7 @@ public:
             if (prices[l] < prices[r]) {
                 int profit = prices[r] - prices[l];
                 maxP = max(maxP, profit);
-            } else {
+            } else { 
                 l=r;
             }
         }
