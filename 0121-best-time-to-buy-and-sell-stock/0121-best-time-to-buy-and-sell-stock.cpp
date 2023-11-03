@@ -23,7 +23,7 @@ public:
     // int l=0, r=0,profit=0;  // l is for buy and r is for sell
     
     int maxP = 0;
-        int l=0;
+    int l=0;
 
         for (int r = 0; r < prices.size(); r++) {
             if (prices[l] < prices[r]) {
