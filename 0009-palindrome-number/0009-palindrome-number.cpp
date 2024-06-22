@@ -1,11 +1,9 @@
 class Solution {
 public:
     bool isPalindrome(int n) {
-        
          if (n < 0) {
             return false;
         }
-        
         long long int remainder=0,Reverse=0;
         int newN = n;
        
