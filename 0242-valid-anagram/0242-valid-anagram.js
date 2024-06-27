@@ -17,9 +17,12 @@ var isAnagram = function(s, t) {
     // return s==t;
 
 // Approach 2
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 if(s.length !== t.length) return false;
 
-let O1 = {};
+let O1 = {}; //object 1
 let O2 = {};
 
 for(let i=0; i<s.length; i++){
